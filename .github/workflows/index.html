@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desha | Profile</title>
+    <style>
+        /* ستايل "ليفل الوحوش" */
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(45deg, #0f0c29, #302b63, #24243e);
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            overflow: hidden;
+        }
+
+        .glass-card {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(15px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 25px;
+            padding: 40px;
+            text-align: center;
+            width: 85%;
+            max-width: 400px;
+            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.8);
+            animation: fadeIn 1.5s ease-in-out;
+        }
+
+        .profile-img {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            border: 4px solid #00d2ff;
+            margin-bottom: 20px;
+            box-shadow: 0 0 20px #00d2ff;
+        }
+
+        h1 {
+            margin: 10px 0;
+            font-size: 28px;
+            text-shadow: 2px 2px 4px #000;
+        }
+
+        p {
+            font-size: 16px;
+            color: #ccc;
+            margin-bottom: 30px;
+        }
+
+        .links-container {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .btn {
+            text-decoration: none;
+            color: white;
+            background: rgba(255, 255, 255, 0.15);
+            padding: 12px;
+            border-radius: 12px;
+            transition: 0.3s;
+            border: 1px solid transparent;
+            font-weight: bold;
+        }
+
+        .btn:hover {
+            background: #00d2ff;
+            color: #000;
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0, 210, 255, 0.4);
+        }
+
+        .badge {
+            display: inline-block;
+            background: #00d2ff;
+            color: black;
+            padding: 5px 15px;
+            border-radius: 50px;
+            font-size: 12px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: scale(0.9); }
+            to { opacity: 1; transform: scale(1); }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="glass-card">
+        <img src="https://via.placeholder.com/150" alt="Desha" class="profile-img">
+        
+        <div class="badge">Programmer & Security</div>
+        <h1>DE S H A 🔥</h1>
+        <p>مطور بايثون | خبير رشق | بتاع كله</p>
+
+        <div class="links-container">
+            <a href="https://whatsapp.com/channel/0029VbBvRhSKrWQzap5xB022" class="btn">قناتي في الواتساب 🚀</a>
+            <a href="https://t.me/YourUsername" class="btn">تليجرام (تواصل خاص) 💬</a>
+            <a href="https://facebook.com/YourID" class="btn">حسابي الشخصي 👤</a>
+        </div>
+
+        <div style="margin-top: 25px; font-size: 10px; color: #888;">
+            &copy; 2026 Developed by Desha
+        </div>
+    </div>
+
+</body>
+  </html>
