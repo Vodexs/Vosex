@@ -2,120 +2,116 @@
 <html lang="ar" dir="rtl">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-    <title>DESHA 505 🔥</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DESHA 505 | 🔥</title>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Cairo:wght@700;900&display=swap');
 
-        * { box-sizing: border-box; }
-        
-        body, html {
-            margin: 0; padding: 0; width: 100%; height: 100%;
+        body {
+            margin: 0;
+            padding: 80px 20px; /* مسافة عشان ميبقاش لازق فوق */
             background: #000;
             color: #fff;
             font-family: 'Cairo', sans-serif;
             display: flex;
-            justify-content: center;
+            flex-direction: column;
             align-items: center;
-            overflow: hidden;
+            min-height: 100vh;
+            /* خلفية لهب منورة */
+            background: linear-gradient(180deg, #1a0505 0%, #000 100%);
         }
 
-        /* خلفية نار "حقيقية" متحركة بالكود */
-        .fire-wrapper {
-            position: fixed; width: 100%; height: 100%;
-            background: radial-gradient(circle at center, #410a0a 0%, #000 100%);
-            z-index: 1;
-        }
-
-        /* الكارد الرئيسي - "مرفوع" ومظبوط للموبايل */
-        .card {
-            background: rgba(15, 5, 5, 0.9);
-            border: 2px solid #ff4500;
-            border-radius: 30px;
-            padding: 40px 25px;
-            width: 88%;
-            max-width: 370px;
-            text-align: center;
-            box-shadow: 0 0 50px rgba(255, 69, 0, 0.5);
-            position: relative;
-            z-index: 10;
-            backdrop-filter: blur(10px);
-            /* حركة الزتونة عشان ميبقاش لازق فوق */
-            transform: translateY(-20px);
-        }
-
-        /* الصورة - استخدمت صورة مضمونة تفتح 100% */
-        .profile-wrap {
-            width: 120px; height: 120px;
-            margin: 0 auto 20px;
+        /* 📸 برواز الصورة الجامد */
+        .profile-container {
+            width: 140px;
+            height: 140px;
             border-radius: 50%;
-            border: 3px solid #ff4500;
-            box-shadow: 0 0 20px #ff4500;
+            border: 4px solid #ff4500;
+            box-shadow: 0 0 30px #ff4500;
             overflow: hidden;
+            margin-bottom: 25px;
             background: #111;
         }
 
         .profile-img {
-            width: 100%; height: 100%; object-fit: cover;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
         }
 
         h1 {
-            font-size: 32px; margin: 0;
-            font-weight: 900;
-            background: linear-gradient(to bottom, #fff, #ff4500);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            filter: drop-shadow(0 0 5px rgba(255, 69, 0, 0.5));
+            font-size: 38px;
+            margin: 0;
+            color: #fff;
+            text-shadow: 0 0 15px #ff4500;
+            letter-spacing: 2px;
         }
 
-        .bio { font-size: 14px; color: #aaa; margin: 10px 0 30px; }
+        .bio {
+            color: #ffae00;
+            font-weight: bold;
+            margin-bottom: 40px;
+            letter-spacing: 1px;
+        }
 
-        .links { display: grid; gap: 15px; }
+        /* 🚀 الزراير - نار حقيقية */
+        .links {
+            width: 100%;
+            max-width: 350px;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
 
         .btn {
             text-decoration: none;
             color: #fff;
-            padding: 16px;
+            padding: 20px;
             border-radius: 15px;
-            background: rgba(255, 69, 0, 0.1);
-            border: 1px solid #ff4500;
-            font-weight: bold;
+            text-align: center;
+            font-weight: 900;
+            font-size: 18px;
+            background: linear-gradient(45deg, #ff4500, #ff8c00);
+            box-shadow: 0 5px 15px rgba(255, 69, 0, 0.4);
             transition: 0.3s;
-            box-shadow: inset 0 0 10px rgba(255, 69, 0, 0.2);
+            border: none;
+            cursor: pointer;
         }
 
-        /* لهب عند اللمس */
-        .btn:active, .btn:hover {
-            background: #ff4500;
-            color: #000;
-            box-shadow: 0 0 30px #ff4500;
-            transform: scale(1.05);
+        .btn:hover {
+            transform: scale(1.05) translateY(-5px);
+            box-shadow: 0 10px 30px #ff4500;
+            filter: brightness(1.2);
         }
 
-        .footer { margin-top: 25px; font-size: 11px; color: #333; letter-spacing: 2px; }
+        .btn-wa { background: linear-gradient(45deg, #25D366, #128C7E); box-shadow: 0 5px 15px rgba(37, 211, 102, 0.4); }
+        .btn-tg { background: linear-gradient(45deg, #0088cc, #005580); box-shadow: 0 5px 15px rgba(0, 136, 204, 0.4); }
+        .btn-fb { background: linear-gradient(45deg, #1877F2, #0a4da0); box-shadow: 0 5px 15px rgba(24, 119, 242, 0.4); }
+
+        .footer {
+            margin-top: 50px;
+            color: #333;
+            font-size: 12px;
+        }
     </style>
 </head>
 <body>
 
-    <div class="fire-wrapper"></div>
-
-    <div class="card">
-        <div class="profile-wrap">
-            <img src="https://www.gstatic.com/images/branding/product/2x/avatar_anonymous_120dp.png" alt="Desha" class="profile-img">
-        </div>
-        
-        <h1>DESHA 505</h1>
-        <p class="bio">Python Developer | Cyber Security 🔥</p>
-
-        <div class="links">
-            <a href="https://whatsapp.com/channel/0029VbBvRhSKrWQzap5xB022" class="btn">قناة الملصقات النارية 🔥</a>
-            <a href="https://wa.me/201019349123" class="btn">واتساب</a>
-            <a href="https://t.me/desha505" class="btn">تليجرام</a>
-            <a href="https://www.facebook.com/share/1DZU63MBZ5/" class="btn">فيسبوك</a>
-        </div>
-
-        <div class="footer">DESIGNED BY DESHA • 2026</div>
+    <div class="profile-container">
+        <img src="desha.jpg" alt="DESHA" class="profile-img">
     </div>
+
+    <h1>DESHA 505</h1>
+    <p class="bio">SYSTEM ONLINE • FIRE MODE 🔥</p>
+
+    <div class="links">
+        <a href="https://whatsapp.com/channel/0029VbBvRhSKrWQzap5xB022" class="btn">قناة ملصقات واتساب 🔥</a>
+        <a href="https://wa.me/201019349123" class="btn btn-wa">واتساب 💬</a>
+        <a href="https://t.me/desha505" class="btn btn-tg">تليجرام ✈️</a>
+        <a href="https://www.facebook.com/share/1DZU63MBZ5/" class="btn btn-fb">فيسبوك 👤</a>
+    </div>
+
+    <div class="footer">DEVELOPED BY DESHA 🔥 2026</div>
 
 </body>
 </html>
