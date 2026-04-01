@@ -5,113 +5,106 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DESHA 505 | 🔥</title>
     <style>
+        /* ستايل ديشا 505 - النسخة النهائية المظبوطة */
         @import url('https://fonts.googleapis.com/css2?family=Cairo:wght@700;900&display=swap');
 
         body {
             margin: 0;
-            padding: 80px 20px; /* مسافة عشان ميبقاش لازق فوق */
-            background: #000;
-            color: #fff;
+            padding: 50px 20px; /* مساحة عشان ميبقاش لازق في حواف الموبايل */
+            background-color: #080808;
+            color: white;
             font-family: 'Cairo', sans-serif;
             display: flex;
             flex-direction: column;
             align-items: center;
             min-height: 100vh;
-            /* خلفية لهب منورة */
-            background: linear-gradient(180deg, #1a0505 0%, #000 100%);
         }
 
-        /* 📸 برواز الصورة الجامد */
-        .profile-container {
-            width: 140px;
-            height: 140px;
+        /* 📸 برواز الصورة - لازم ترفع صورتك باسم desha.jpg */
+        .profile-card {
+            width: 150px;
+            height: 150px;
             border-radius: 50%;
-            border: 4px solid #ff4500;
-            box-shadow: 0 0 30px #ff4500;
+            border: 5px solid #ff4500;
+            box-shadow: 0 0 25px rgba(255, 69, 0, 0.5);
             overflow: hidden;
-            margin-bottom: 25px;
-            background: #111;
+            margin-bottom: 20px;
         }
 
-        .profile-img {
+        .profile-card img {
             width: 100%;
             height: 100%;
             object-fit: cover;
         }
 
         h1 {
-            font-size: 38px;
-            margin: 0;
-            color: #fff;
-            text-shadow: 0 0 15px #ff4500;
-            letter-spacing: 2px;
+            font-size: 40px;
+            margin: 10px 0;
+            text-shadow: 0 0 10px #ff4500;
         }
 
-        .bio {
-            color: #ffae00;
-            font-weight: bold;
+        .status {
+            background: #ff4500;
+            color: #000;
+            padding: 5px 15px;
+            border-radius: 50px;
+            font-weight: 900;
+            font-size: 12px;
             margin-bottom: 40px;
-            letter-spacing: 1px;
         }
 
-        /* 🚀 الزراير - نار حقيقية */
-        .links {
+        /* 🔥 الزراير - حماس من غير عك */
+        .links-group {
             width: 100%;
             max-width: 350px;
             display: flex;
             flex-direction: column;
-            gap: 20px;
+            gap: 15px;
         }
 
         .btn {
             text-decoration: none;
-            color: #fff;
-            padding: 20px;
+            color: white;
+            padding: 18px;
             border-radius: 15px;
-            text-align: center;
-            font-weight: 900;
+            font-weight: 700;
             font-size: 18px;
-            background: linear-gradient(45deg, #ff4500, #ff8c00);
-            box-shadow: 0 5px 15px rgba(255, 69, 0, 0.4);
-            transition: 0.3s;
-            border: none;
-            cursor: pointer;
+            text-align: center;
+            border: 2px solid #333;
+            transition: 0.3s ease;
+            background: rgba(255, 69, 0, 0.05);
         }
 
         .btn:hover {
-            transform: scale(1.05) translateY(-5px);
-            box-shadow: 0 10px 30px #ff4500;
-            filter: brightness(1.2);
+            border-color: #ff4500;
+            background: #ff4500;
+            color: #000;
+            box-shadow: 0 0 20px rgba(255, 69, 0, 0.6);
+            transform: translateY(-5px);
         }
 
-        .btn-wa { background: linear-gradient(45deg, #25D366, #128C7E); box-shadow: 0 5px 15px rgba(37, 211, 102, 0.4); }
-        .btn-tg { background: linear-gradient(45deg, #0088cc, #005580); box-shadow: 0 5px 15px rgba(0, 136, 204, 0.4); }
-        .btn-fb { background: linear-gradient(45deg, #1877F2, #0a4da0); box-shadow: 0 5px 15px rgba(24, 119, 242, 0.4); }
+        /* ألوان مخصصة لكل زرار */
+        .wa:hover { background-color: #25d366; border-color: #25d366; color: #fff; }
+        .tg:hover { background-color: #0088cc; border-color: #0088cc; color: #fff; }
+        .fb:hover { background-color: #1877f2; border-color: #1877f2; color: #fff; }
 
-        .footer {
-            margin-top: 50px;
-            color: #333;
-            font-size: 12px;
-        }
     </style>
 </head>
 <body>
 
-    <div class="profile-container">
-        <img src="desha.jpg" alt="DESHA" class="profile-img">
+    <div class="profile-card">
+        <img src="desha.jpg" alt="DESHA">
     </div>
 
     <h1>DESHA 505</h1>
-    <p class="bio">SYSTEM ONLINE • FIRE MODE 🔥</p>
+    <div class="status">SYSTEM ONLINE 🔥</div>
 
-    <div class="links">
-        <a href="https://whatsapp.com/channel/0029VbBvRhSKrWQzap5xB022" class="btn">قناة ملصقات واتساب 🔥</a>
-        <a href="https://wa.me/201019349123" class="btn btn-wa">واتساب 💬</a>
-        <a href="https://t.me/desha505" class="btn btn-tg">تليجرام ✈️</a>
-        <a href="https://www.facebook.com/share/1DZU63MBZ5/" class="btn btn-fb">فيسبوك 👤</a>
+    <div class="links-group">
+        <a href="https://whatsapp.com/channel/0029VbBvRhSKrWQzap5xB022" class="btn">قناة ملصقات واتساب 🚀</a>
+        <a href="https://wa.me/201019349123" class="btn wa">تواصل واتساب 💬</a>
+        <a href="https://t.me/desha505" class="btn tg">حسابي تليجرام ✈️</a>
+        <a href="https://www.facebook.com/share/1DZU63MBZ5/" class="btn fb">بروفايل فيسبوك 👤</a>
     </div>
-
-    <div class="footer">DEVELOPED BY DESHA 🔥 2026</div>
 
 </body>
 </html>
