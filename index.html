@@ -3,136 +3,179 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DESHA 505 | 🔥 جحيم التقنية</title>
+    <title>DESHA 505 🔥</title>
     <style>
-        /* ستايل "ديشا 505 v2.1" - شغل عالي فششششخ بصورة ديشا الحقيقية */
-        @import url('https://fonts.googleapis.com/css2?family=Black+Ops+One&family=Cairo:wght@700;900&display=swap');
+        /* ستايل "ديشا النووي" - ضرب نار حقيقي */
+        @import url('https://fonts.googleapis.com/css2?family=Cairo:wght@700;900&display=swap');
 
+        * { box-sizing: border-box; }
+        
         body, html {
             margin: 0; padding: 0; width: 100%; height: 100%;
-            background: #000; overflow: hidden;
-            font-family: 'Cairo', sans-serif; color: #fff;
+            overflow: hidden; /* عشان جزيئات النار متشغلش الاسكرول */
+            background: radial-gradient(circle at center, #2b0c0c 0%, #050505 100%);
+            color: #fff;
+            font-family: 'Cairo', sans-serif;
             display: flex; justify-content: center; align-items: center;
         }
 
-        /* 🔥 الخلفية النارية الحقيقية */
-        .fire-bg {
-            position: fixed; top: 0; left: 0; width: 100%; height: 100%;
-            background: url('https://i.giphy.com/media/v1.Y2lkPTc5MGI3NjExNHJndnZ6Z3R6Z3R6Z3R6Z3R6Z3R6Z3R6Z3R6Z3R6Z3R6Z3ImZXA9djFfaW50ZXJuYWxfZ2lmX2J5X2lkJmN0PWc/Lopx9eUi34rbq/giphy.gif') center/cover;
-            filter: brightness(0.4) contrast(1.2);
-            z-index: -1;
+        /* 🔥 خلفية النار المتحركة */
+        #fire-bg {
+            position: fixed; width: 100%; height: 100%;
+            top: 0; left: 0; z-index: 1;
         }
 
-        /* 🛡️ الكارد الزجاجي المحروق */
+        /* 🛡️ الكارد الرئيسي المنور */
         .card {
-            background: rgba(0, 0, 0, 0.6);
-            backdrop-filter: blur(8px);
-            border: 2px solid #ff4500;
-            border-radius: 20px;
-            padding: 60px 30px 40px; /* زودت الـ padding عشان الصورة */
+            background: rgba(10, 0, 0, 0.7);
+            border: 2px solid #ff5e00;
+            border-radius: 30px;
+            padding: 50px 30px;
             width: 85%; max-width: 380px;
             text-align: center;
-            box-shadow: 0 0 50px rgba(255, 69, 0, 0.6);
-            position: relative;
-            animation: shake 5s infinite;
+            box-shadow: 0 0 40px rgba(255, 94, 0, 0.4);
+            position: relative; z-index: 10;
+            backdrop-filter: blur(10px);
+            animation: cardEntrance 1s ease-out;
         }
 
-        /* 📸 ستايل الصورة الشخصية المنورة */
+        /* 📸 الصورة الشخصية المنورة */
         .profile-container {
-            width: 130px;
-            height: 130px;
-            margin: -100px auto 25px; /* حركة صايعة تخلي الصورة طالعة بره الكارد */
-            border-radius: 50%;
+            width: 130px; height: 130px;
+            margin: 0 auto 25px; border-radius: 50%;
             border: 4px solid #fff;
-            box-shadow: 0 0 30px rgba(255, 255, 255, 0.8), 0 0 15px rgba(255, 69, 0, 0.6);
+            box-shadow: 0 0 20px #fff;
             overflow: hidden;
             position: relative;
-            z-index: 5;
         }
 
         .profile-img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover; /* عشان الصورة متتمطش */
+            width: 100%; height: 100%; object-fit: cover;
         }
 
         /* 🌟 الاسم الملهب */
         h1 {
-            font-family: 'Black Ops One', cursive;
-            font-size: 38px; margin: 0;
-            background: linear-gradient(to bottom, #fff 20%, #ffae00 50%, #ff4500 100%);
+            font-size: 36px; margin: 10px 0;
+            font-weight: 900; letter-spacing: 3px;
+            background: linear-gradient(to right, #ff5e00, #ff0000);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
-            filter: drop-shadow(0 0 10px rgba(255, 69, 0, 0.8));
-            letter-spacing: 3px;
+            filter: drop-shadow(0 0 8px rgba(255, 0, 0, 0.6));
         }
 
-        .id-tag {
-            color: #ffae00; font-size: 13px; margin-bottom: 20px;
-            font-weight: bold; letter-spacing: 5px;
-        }
+        .bio { font-size: 16px; color: #ccc; margin-bottom: 30px; line-height: 1.5; }
 
-        .bio { font-size: 15px; color: #ddd; margin: 15px 0 25px; line-height: 1.5; }
-
-        /* 🔥 الأزرار الرايقة */
-        .links { display: flex; flex-direction: column; gap: 15px; }
+        /* 🔥 الأزرار اللي بتضرب نار */
+        .links { display: grid; gap: 20px; }
 
         .btn {
-            text-decoration: none; color: #fff;
-            padding: 14px; border-radius: 10px;
-            font-weight: 900; font-size: 16px;
-            background: rgba(255, 69, 0, 0.15);
-            border: 1px solid #ff4500;
+            position: relative; padding: 18px;
+            background: rgba(255, 94, 0, 0.1);
+            border: 2px solid #ff5e00;
+            border-radius: 15px;
+            color: #fff; text-decoration: none;
+            font-weight: bold; font-size: 18px;
             transition: 0.3s all ease-in-out;
-            display: flex; align-items: center; justify-content: center; gap: 10px;
+            overflow: hidden;
+            box-shadow: 0 0 10px rgba(255, 94, 0, 0.2);
+        }
+
+        /* أنيميشن اللهب ورا الزرار */
+        .btn::before {
+            content: ''; position: absolute;
+            top: -50%; left: -50%; width: 200%; height: 200%;
+            background: radial-gradient(circle, #ff5e00 10%, #ff0000 40%, transparent 70%);
+            opacity: 0.2; transform: scale(0.5);
+            transition: 0.4s; z-index: -1;
         }
 
         .btn:hover {
-            background: #ff4500; color: #000;
-            box-shadow: 0 0 30px #ff4500;
+            color: #000; box-shadow: 0 0 30px #ff5e00;
             transform: scale(1.05);
         }
 
-        /* ⚡ أنيميشن اهتزاز خفيف */
-        @keyframes shake {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-10px); }
+        .btn:hover::before {
+            transform: scale(1); opacity: 0.8;
+            animation: fireSwirl 1s infinite linear;
         }
 
-        .footer { margin-top: 30px; font-size: 10px; color: #666; letter-spacing: 2px; }
+        /* 🔥 حركة لهب عشوائية */
+        @keyframes fireSwirl {
+            from { transform: rotate(0deg) scale(1); }
+            to { transform: rotate(360deg) scale(1.1); }
+        }
+
+        @keyframes cardEntrance { from { opacity: 0; transform: translateY(50px) scale(0.9); } to { opacity: 1; transform: translateY(0) scale(1); } }
+
+        .footer { margin-top: 30px; font-size: 12px; color: #444; }
 
     </style>
 </head>
 <body>
 
-    <div class="fire-bg"></div>
+    <canvas id="fire-bg"></canvas>
 
     <div class="card">
         <div class="profile-container">
-            <img src="https://i.postimg.cc/50p06C4p/IMG-20251101-190623.jpg" alt="Desha Profile" class="profile-img">
+            <img src="https://i.postimg.cc/50p06C4p/IMG-20251101-190623.jpg" alt="Desha" class="profile-img">
         </div>
-
-        <div class="id-tag">SYSTEM: DESHA 505</div>
-        <h1>D E S H A</h1>
-        <p class="bio">⚡ مبرمج بايثون | خبير أمن تقني<br>صاحب أقوى مصلحة رشق في مصر 🔥</p>
+        
+        <h1>DESHA 505</h1>
+        <p class="bio">⚡ مبرمج بايثون | خبير أمن تقني<br>بتاع المصلحة الصعبة 🔥</p>
 
         <div class="links">
-            <a href="https://whatsapp.com/channel/0029VbBvRhSKrWQzap5xB022" class="btn" target="_blank">
-                <span>🔥</span> قناة الملصقات النارية
-            </a>
-            <a href="https://wa.me/201019349123" class="btn" target="_blank">
-                <span>💬</span> واتساب: +201019349123
-            </a>
-            <a href="https://t.me/desha505" class="btn" target="_blank">
-                <span>✈️</span> تليجرام: @desha505
-            </a>
-            <a href="https://www.facebook.com/share/1DZU63MBZ5/" class="btn" target="_blank">
-                <span>👤</span> بروفايل الفيسبوك
-            </a>
+            <a href="https://whatsapp.com/channel/0029VbBvRhSKrWQzap5xB022" class="btn">قناة الملصقات النارية 🔥</a>
+            <a href="https://wa.me/201019349123" class="btn">تواصل عبر واتساب 💬</a>
+            <a href="https://t.me/desha505" class="btn">حسابي على تليجرام ✈️</a>
+            <a href="https://www.facebook.com/share/1DZU63MBZ5/" class="btn">بروفايل الفيسبوك 👤</a>
         </div>
 
         <div class="footer">MADE BY DESHA • 2026</div>
     </div>
+
+    <script>
+        const canvas = document.getElementById('fire-bg');
+        const ctx = canvas.getContext('2d');
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+
+        class Particle {
+            constructor() {
+                this.x = Math.random() * canvas.width;
+                this.y = canvas.height + Math.random() * 100;
+                this.size = Math.random() * 3 + 1;
+                this.speedY = Math.random() * -3 - 1;
+                this.color = `hsl(${Math.random() * 30 + 10}, 100%, 50%)`;
+                this.opacity = Math.random() * 0.5 + 0.5;
+            }
+            update() {
+                this.y += this.speedY;
+                if (this.y < -this.size) {
+                    this.y = canvas.height + Math.random() * 100;
+                    this.x = Math.random() * canvas.width;
+                }
+            }
+            draw() {
+                ctx.fillStyle = this.color;
+                ctx.beginPath();
+                ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+                ctx.fill();
+            }
+        }
+
+        const particlesArray = [];
+        for (let i = 0; i < 100; i++) { particlesArray.push(new Particle()); }
+
+        function animate() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            for (let i = 0; i < particlesArray.length; i++) {
+                particlesArray[i].update();
+                particlesArray[i].draw();
+            }
+            requestAnimationFrame(animate);
+        }
+        animate();
+    </script>
 
 </body>
 </html>
