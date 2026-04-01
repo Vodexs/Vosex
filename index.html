@@ -2,36 +2,47 @@
 <html lang="ar" dir="rtl">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
     <title>DESHA 505 | PRO</title>
     <style>
+        /* ستايل "غسيل السمعة" - ديشا 2026 */
         @import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400;700;900&display=swap');
 
         body {
             margin: 0;
-            padding: 100px 20px 60px; /* مسافة كبيرة فوق عشان "تبعد" عن وشك */
-            background: #080808;
-            color: white;
+            padding: 0;
+            background: #050505; /* أسود ملكي */
+            color: #fff;
             font-family: 'Cairo', sans-serif;
             display: flex;
-            flex-direction: column;
+            justify-content: center;
             align-items: center;
             min-height: 100vh;
-            /* خلفية متدرجة فخمة جداً */
-            background: radial-gradient(circle at top, #121c35 0%, #050505 100%);
-            overflow-x: hidden;
+            /* خلفية فخمة جداً بتتحرك */
+            background: radial-gradient(circle at 50% 50%, #1a1a1a 0%, #000 100%);
+            overflow: hidden;
         }
 
-        /* 📸 برواز الصورة "المتوهج" */
+        .main-card {
+            width: 90%;
+            max-width: 400px;
+            text-align: center;
+            padding: 40px 20px;
+            /* حركة الزتونة عشان "تبعد عن وشك" */
+            margin-top: -20px; 
+        }
+
+        /* 📸 الصورة ببرواز نيون بينبض */
         .profile-container {
-            width: 130px;
-            height: 130px;
+            width: 140px;
+            height: 140px;
+            margin: 0 auto 30px;
             border-radius: 50%;
-            border: 2px solid rgba(0, 242, 255, 0.5);
-            box-shadow: 0 0 30px rgba(0, 242, 255, 0.2);
-            padding: 5px;
-            margin-bottom: 30px;
-            animation: pulse-border 3s infinite;
+            position: relative;
+            padding: 4px;
+            background: linear-gradient(45deg, #00f2ff, #7000ff);
+            box-shadow: 0 0 20px rgba(0, 242, 255, 0.4);
+            animation: pulse-glow 3s infinite;
         }
 
         .profile-img {
@@ -39,100 +50,99 @@
             height: 100%;
             border-radius: 50%;
             object-fit: cover;
-            border: 2px solid #fff;
+            border: 2px solid #000;
         }
 
-        /* ✨ الكلام اللي بينبض */
+        /* ✨ النبض الهادي على الكلام */
         h1 {
             font-size: 38px;
             font-weight: 900;
             margin: 0;
-            background: linear-gradient(to right, #fff, #00f2ff);
+            letter-spacing: 2px;
+            background: linear-gradient(to bottom, #fff, #00f2ff);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             animation: text-pulse 2s infinite alternate;
         }
 
-        .status-tag {
+        .status {
             font-size: 14px;
             color: #00f2ff;
-            letter-spacing: 3px;
-            margin-bottom: 50px;
-            opacity: 0.8;
             font-weight: bold;
+            letter-spacing: 5px;
+            margin-bottom: 50px;
+            display: block;
+            opacity: 0.8;
         }
 
-        /* 🛡️ الزراير الشفافة (Glassmorphism) */
-        .links-container {
-            width: 100%;
-            max-width: 380px;
+        /* 🛡️ الزراير الشفافة المظبوطة (Glassmorphism) */
+        .links {
             display: flex;
             flex-direction: column;
-            gap: 20px; /* مسافة بين الزراير مريحة */
+            gap: 18px;
         }
 
         .btn {
             text-decoration: none;
-            color: rgba(255, 255, 255, 0.9);
+            color: #fff;
             padding: 18px;
-            border-radius: 16px;
-            background: rgba(255, 255, 255, 0.03); /* شفافية قوية */
-            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 18px;
+            background: rgba(255, 255, 255, 0.05); /* شفافية بجد */
+            border: 1px solid rgba(255, 255, 255, 0.1);
             backdrop-filter: blur(15px); /* تأثير القزاز */
             -webkit-backdrop-filter: blur(15px);
             font-weight: 700;
             font-size: 17px;
-            text-align: center;
-            transition: 0.4s all ease;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+            transition: 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
         }
 
         .btn:hover {
             background: rgba(0, 242, 255, 0.1);
-            border-color: rgba(0, 242, 255, 0.5);
-            color: #fff;
-            transform: translateY(-5px) scale(1.02);
-            box-shadow: 0 10px 25px rgba(0, 242, 255, 0.15);
+            border-color: #00f2ff;
+            transform: scale(1.05);
+            box-shadow: 0 10px 25px rgba(0, 242, 255, 0.2);
         }
 
-        /* 🔄 Animations */
+        /* 🔄 الأنيميشن */
         @keyframes text-pulse {
-            from { filter: drop-shadow(0 0 2px rgba(0,242,255,0.2)); opacity: 0.9; }
-            to { filter: drop-shadow(0 0 10px rgba(0,242,255,0.6)); opacity: 1; }
+            from { filter: drop-shadow(0 0 2px rgba(0,242,255,0.4)); }
+            to { filter: drop-shadow(0 0 15px rgba(0,242,255,0.8)); }
         }
 
-        @keyframes pulse-border {
-            0% { box-shadow: 0 0 15px rgba(0, 242, 255, 0.2); }
-            50% { box-shadow: 0 0 35px rgba(0, 242, 255, 0.5); }
-            100% { box-shadow: 0 0 15px rgba(0, 242, 255, 0.2); }
+        @keyframes pulse-glow {
+            0% { transform: scale(1); box-shadow: 0 0 20px rgba(0, 242, 255, 0.4); }
+            50% { transform: scale(1.02); box-shadow: 0 0 40px rgba(0, 242, 255, 0.6); }
+            100% { transform: scale(1); box-shadow: 0 0 20px rgba(0, 242, 255, 0.4); }
         }
 
         .footer {
-            margin-top: auto;
-            padding: 40px 0;
-            font-size: 12px;
-            color: rgba(255, 255, 255, 0.2);
-            letter-spacing: 1px;
+            position: absolute;
+            bottom: 30px;
+            font-size: 10px;
+            color: #333;
+            letter-spacing: 2px;
         }
     </style>
 </head>
 <body>
 
-    <div class="profile-container">
-        <img src="desha.jpg" alt="DESHA" class="profile-img">
+    <div class="main-card">
+        <div class="profile-container">
+            <img src="desha.jpg" alt="DESHA" class="profile-img">
+        </div>
+
+        <h1>DESHA 505</h1>
+        <span class="status">ACTIVE SYSTEM</span>
+
+        <div class="links">
+            <a href="https://whatsapp.com/channel/0029VbBvRhSKrWQzap5xB022" class="btn">🚀 قناة الملصقات النارية</a>
+            <a href="https://wa.me/201019349123" class="btn">💬 تواصل عبر واتساب</a>
+            <a href="https://t.me/desha505" class="btn">✈️ حسابي على تليجرام</a>
+            <a href="https://www.facebook.com/share/1DZU63MBZ5/" class="btn">👤 بروفايل الفيسبوك</a>
+        </div>
     </div>
 
-    <h1>DESHA 505</h1>
-    <div class="status-tag">ACTIVE SYSTEM</div>
-
-    <div class="links-container">
-        <a href="https://whatsapp.com/channel/0029VbBvRhSKrWQzap5xB022" class="btn">قناة ملصقات واتساب 🚀</a>
-        <a href="https://wa.me/201019349123" class="btn">تواصل واتساب 💬</a>
-        <a href="https://t.me/desha505" class="btn">تليجرام ✈️</a>
-        <a href="https://www.facebook.com/share/1DZU63MBZ5/" class="btn">فيسبوك 👤</a>
-    </div>
-
-    <div class="footer">© 2026 DESHA DESIGN</div>
+    <div class="footer">DESHA DESIGN • 2026</div>
 
 </body>
 </html>
