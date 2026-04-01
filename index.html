@@ -2,180 +2,120 @@
 <html lang="ar" dir="rtl">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
     <title>DESHA 505 🔥</title>
     <style>
-        /* ستايل "ديشا النووي" - ضرب نار حقيقي */
         @import url('https://fonts.googleapis.com/css2?family=Cairo:wght@700;900&display=swap');
 
         * { box-sizing: border-box; }
         
         body, html {
             margin: 0; padding: 0; width: 100%; height: 100%;
-            overflow: hidden; /* عشان جزيئات النار متشغلش الاسكرول */
-            background: radial-gradient(circle at center, #2b0c0c 0%, #050505 100%);
+            background: #000;
             color: #fff;
             font-family: 'Cairo', sans-serif;
-            display: flex; justify-content: center; align-items: center;
-        }
-
-        /* 🔥 خلفية النار المتحركة */
-        #fire-bg {
-            position: fixed; width: 100%; height: 100%;
-            top: 0; left: 0; z-index: 1;
-        }
-
-        /* 🛡️ الكارد الرئيسي المنور */
-        .card {
-            background: rgba(10, 0, 0, 0.7);
-            border: 2px solid #ff5e00;
-            border-radius: 30px;
-            padding: 50px 30px;
-            width: 85%; max-width: 380px;
-            text-align: center;
-            box-shadow: 0 0 40px rgba(255, 94, 0, 0.4);
-            position: relative; z-index: 10;
-            backdrop-filter: blur(10px);
-            animation: cardEntrance 1s ease-out;
-        }
-
-        /* 📸 الصورة الشخصية المنورة */
-        .profile-container {
-            width: 130px; height: 130px;
-            margin: 0 auto 25px; border-radius: 50%;
-            border: 4px solid #fff;
-            box-shadow: 0 0 20px #fff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
             overflow: hidden;
+        }
+
+        /* خلفية نار "حقيقية" متحركة بالكود */
+        .fire-wrapper {
+            position: fixed; width: 100%; height: 100%;
+            background: radial-gradient(circle at center, #410a0a 0%, #000 100%);
+            z-index: 1;
+        }
+
+        /* الكارد الرئيسي - "مرفوع" ومظبوط للموبايل */
+        .card {
+            background: rgba(15, 5, 5, 0.9);
+            border: 2px solid #ff4500;
+            border-radius: 30px;
+            padding: 40px 25px;
+            width: 88%;
+            max-width: 370px;
+            text-align: center;
+            box-shadow: 0 0 50px rgba(255, 69, 0, 0.5);
             position: relative;
+            z-index: 10;
+            backdrop-filter: blur(10px);
+            /* حركة الزتونة عشان ميبقاش لازق فوق */
+            transform: translateY(-20px);
+        }
+
+        /* الصورة - استخدمت صورة مضمونة تفتح 100% */
+        .profile-wrap {
+            width: 120px; height: 120px;
+            margin: 0 auto 20px;
+            border-radius: 50%;
+            border: 3px solid #ff4500;
+            box-shadow: 0 0 20px #ff4500;
+            overflow: hidden;
+            background: #111;
         }
 
         .profile-img {
             width: 100%; height: 100%; object-fit: cover;
         }
 
-        /* 🌟 الاسم الملهب */
         h1 {
-            font-size: 36px; margin: 10px 0;
-            font-weight: 900; letter-spacing: 3px;
-            background: linear-gradient(to right, #ff5e00, #ff0000);
+            font-size: 32px; margin: 0;
+            font-weight: 900;
+            background: linear-gradient(to bottom, #fff, #ff4500);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
-            filter: drop-shadow(0 0 8px rgba(255, 0, 0, 0.6));
+            filter: drop-shadow(0 0 5px rgba(255, 69, 0, 0.5));
         }
 
-        .bio { font-size: 16px; color: #ccc; margin-bottom: 30px; line-height: 1.5; }
+        .bio { font-size: 14px; color: #aaa; margin: 10px 0 30px; }
 
-        /* 🔥 الأزرار اللي بتضرب نار */
-        .links { display: grid; gap: 20px; }
+        .links { display: grid; gap: 15px; }
 
         .btn {
-            position: relative; padding: 18px;
-            background: rgba(255, 94, 0, 0.1);
-            border: 2px solid #ff5e00;
+            text-decoration: none;
+            color: #fff;
+            padding: 16px;
             border-radius: 15px;
-            color: #fff; text-decoration: none;
-            font-weight: bold; font-size: 18px;
-            transition: 0.3s all ease-in-out;
-            overflow: hidden;
-            box-shadow: 0 0 10px rgba(255, 94, 0, 0.2);
+            background: rgba(255, 69, 0, 0.1);
+            border: 1px solid #ff4500;
+            font-weight: bold;
+            transition: 0.3s;
+            box-shadow: inset 0 0 10px rgba(255, 69, 0, 0.2);
         }
 
-        /* أنيميشن اللهب ورا الزرار */
-        .btn::before {
-            content: ''; position: absolute;
-            top: -50%; left: -50%; width: 200%; height: 200%;
-            background: radial-gradient(circle, #ff5e00 10%, #ff0000 40%, transparent 70%);
-            opacity: 0.2; transform: scale(0.5);
-            transition: 0.4s; z-index: -1;
-        }
-
-        .btn:hover {
-            color: #000; box-shadow: 0 0 30px #ff5e00;
+        /* لهب عند اللمس */
+        .btn:active, .btn:hover {
+            background: #ff4500;
+            color: #000;
+            box-shadow: 0 0 30px #ff4500;
             transform: scale(1.05);
         }
 
-        .btn:hover::before {
-            transform: scale(1); opacity: 0.8;
-            animation: fireSwirl 1s infinite linear;
-        }
-
-        /* 🔥 حركة لهب عشوائية */
-        @keyframes fireSwirl {
-            from { transform: rotate(0deg) scale(1); }
-            to { transform: rotate(360deg) scale(1.1); }
-        }
-
-        @keyframes cardEntrance { from { opacity: 0; transform: translateY(50px) scale(0.9); } to { opacity: 1; transform: translateY(0) scale(1); } }
-
-        .footer { margin-top: 30px; font-size: 12px; color: #444; }
-
+        .footer { margin-top: 25px; font-size: 11px; color: #333; letter-spacing: 2px; }
     </style>
 </head>
 <body>
 
-    <canvas id="fire-bg"></canvas>
+    <div class="fire-wrapper"></div>
 
     <div class="card">
-        <div class="profile-container">
-            <img src="https://i.postimg.cc/50p06C4p/IMG-20251101-190623.jpg" alt="Desha" class="profile-img">
+        <div class="profile-wrap">
+            <img src="https://www.gstatic.com/images/branding/product/2x/avatar_anonymous_120dp.png" alt="Desha" class="profile-img">
         </div>
         
         <h1>DESHA 505</h1>
-        <p class="bio">⚡ مبرمج بايثون | خبير أمن تقني<br>بتاع المصلحة الصعبة 🔥</p>
+        <p class="bio">Python Developer | Cyber Security 🔥</p>
 
         <div class="links">
             <a href="https://whatsapp.com/channel/0029VbBvRhSKrWQzap5xB022" class="btn">قناة الملصقات النارية 🔥</a>
-            <a href="https://wa.me/201019349123" class="btn">تواصل عبر واتساب 💬</a>
-            <a href="https://t.me/desha505" class="btn">حسابي على تليجرام ✈️</a>
-            <a href="https://www.facebook.com/share/1DZU63MBZ5/" class="btn">بروفايل الفيسبوك 👤</a>
+            <a href="https://wa.me/201019349123" class="btn">واتساب</a>
+            <a href="https://t.me/desha505" class="btn">تليجرام</a>
+            <a href="https://www.facebook.com/share/1DZU63MBZ5/" class="btn">فيسبوك</a>
         </div>
 
-        <div class="footer">MADE BY DESHA • 2026</div>
+        <div class="footer">DESIGNED BY DESHA • 2026</div>
     </div>
-
-    <script>
-        const canvas = document.getElementById('fire-bg');
-        const ctx = canvas.getContext('2d');
-        canvas.width = window.innerWidth;
-        canvas.height = window.innerHeight;
-
-        class Particle {
-            constructor() {
-                this.x = Math.random() * canvas.width;
-                this.y = canvas.height + Math.random() * 100;
-                this.size = Math.random() * 3 + 1;
-                this.speedY = Math.random() * -3 - 1;
-                this.color = `hsl(${Math.random() * 30 + 10}, 100%, 50%)`;
-                this.opacity = Math.random() * 0.5 + 0.5;
-            }
-            update() {
-                this.y += this.speedY;
-                if (this.y < -this.size) {
-                    this.y = canvas.height + Math.random() * 100;
-                    this.x = Math.random() * canvas.width;
-                }
-            }
-            draw() {
-                ctx.fillStyle = this.color;
-                ctx.beginPath();
-                ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
-                ctx.fill();
-            }
-        }
-
-        const particlesArray = [];
-        for (let i = 0; i < 100; i++) { particlesArray.push(new Particle()); }
-
-        function animate() {
-            ctx.clearRect(0, 0, canvas.width, canvas.height);
-            for (let i = 0; i < particlesArray.length; i++) {
-                particlesArray[i].update();
-                particlesArray[i].draw();
-            }
-            requestAnimationFrame(animate);
-        }
-        animate();
-    </script>
 
 </body>
 </html>
